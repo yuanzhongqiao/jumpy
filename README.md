@@ -1,96 +1,85 @@
-# Fish Folk: Jumpy
-
-[![Build Status](https://img.shields.io/github/actions/workflow/status/fishfolk/jumpy/ci.yml?logo=github&labelColor=1e1c24&color=8bcfcf)](https://github.com/fishfolk/jumpy/actions) [![Documentation](https://img.shields.io/badge/documentation-fishfolk.github.io-green.svg?labelColor=1e1c24&color=f3ee7a)](https://fishfolk.github.io/jumpy/book) [![License](https://img.shields.io/badge/License-MIT%20or%20Apache%202-green.svg?label=license&labelColor=1e1c24&color=34925e)](./LICENSE) [![Discord](https://img.shields.io/badge/chat-on%20discord-green.svg?logo=discord&logoColor=fff&labelColor=1e1c24&color=8d5b3f)](https://discord.gg/4smxjcheE5)
-
-![Fish Folk: Jumpy Preview](https://user-images.githubusercontent.com/24392180/151969075-399e9fea-e2de-4340-96a4-0a0e5b79c281.gif)
-
-👉 **[Live on Kickstarter!](https://www.kickstarter.com/projects/erlendsh/fish-folk)** 👈
-
-## Introduction
-
-Fish Folk: Jumpy is a tactical 2D shooter, played by up to 4 players online or on a shared screen. Aim either left or right; the rest is up to clever movement and positioning in this fish-on-fish brawler! For more information about our origin story (Duck Game et.al.) and big-picture plans, see our [design document](https://www.notion.so/erlendsh/Fish-Fight-1647ed74217e4e38a59bd28f4f5bc81a).
-
-## Web Demo
-
-Jumpy runs in the browser! You can play [web demo][web_demo] to try out the game, without needing to install anything on your computer.
-
-We recommend using the Chrome browser or other derivatives for best performance, or if you have issues with other browsers.
-
-[web_demo]: https://fishfolk.github.io/jumpy/player/latest/
-
-### Key Features (WIP)
-
-- 2 to 4 players in either Local Multiplayer or Online Play
-- Easy to pick up, emphasizing strategy over twitch reaction
-- Customize characters with hats, saved to your cross-platform profile
-- Create & explore user-made weapons, levels, audio and other scripted extensions
-- Smart level creation tools
-- Tournaments & matchmaking built in
-
-### Status
-
-The game is currently under re-construction as it is being rewritten to use the [Bevy] game engine. There are now 4 stable maps and 4 items in the new version, and the game is nearly ready for another release.
-
-[Bevy]: https://bevyengine.org
-
-## Community
-
-### Contributing
-
-Anyone involved in the Fish Folk community must follow our [code of conduct](https://github.com/fishfolk/jumpy/blob/main/CODE_OF_CONDUCT.md).
-
-If you'd like to make something for Fish Folk, check out our [help-wanted](https://github.com/fishfolk/jumpy/labels/help%20wanted) issues or just ask us on [Discord](https://discord.gg/4smxjcheE5). We'll soon post an updated roadmap for the next month or two of work ahead.
-
-Before committing and opening a PR, please run the following commands and follow their instructions:
-
-1. `cargo clippy -- -W clippy::correctness -D warnings`
-2. `cargo fmt`
-
-### Development Build Profiles
-
-By default, Jumpy will build without optimizations for the `jumpy_core` and `jumpy` crates. This helps reduce re-compile times at the expense of some runtime performance. If you need increased runtime performance during development, you can build with the `--profile dev-optimized` option, to optimize all of the crates:
-
-```bash
-cargo r --profile dev-optimized
-```
-
-### Learning Materials
-
-#### Rust
-
-- [Rusty Engine Tutorial](https://cleancut.github.io/rusty_engine/)
-- [Rust sokoban](https://sokoban.iolivia.me/)
-- <https://pragprog.com/titles/hwrust/hands-on-rust/>
-
-#### Bevy
-
-- [Unofficial Bevy Cheat Book](https://bevy-cheatbook.github.io/)
-
-## Download & play
-
-1. Download the latest version from the [releases](https://github.com/fishfolk/jumpy/releases) page.
-2. Extract the archive and run the executable. (e.g. `./jumpy` or `jumpy.exe`)
-
-### Launcher
-
-[A cross-platform launcher](https://github.com/spicylobstergames/SpicyLauncher) is also available for downloading and launching the game easily.
-
-### Distro Packages
-
-#### Arch Linux
-
-```sh
-pacman -S jumpy
-```
-
-## Building
-
-1. Install Rust with [rustup.rs](https://rustup.rs/)
-2. Clone this repository: `git clone https://github.com/fishfolk/jumpy.git`
-3. `cd jumpy`
-4. `cargo run`
-
-## Credits
-
-- [Fish Folk: Jumpy Credits](./CREDITS.md)
-- Input Icons: [Kadith's Icons](https://kadith.itch.io/kadiths-free-icons) by Kadith
+<div class="Box-sc-g0xbh4-0 QkQOb js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto" _msttexthash="14247727" _msthash="322">鱼民：Jumpy</h1><a id="user-content-fish-folk-jumpy" class="anchor" aria-label="永久链接： Fish Folk： Jumpy" href="#fish-folk-jumpy" _mstaria-label="572741" _msthash="323"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://github.com/fishfolk/jumpy/actions"><img src="https://camo.githubusercontent.com/028f8391bea4321ec622c67c98770025d6dd1d409d6ae0c5aa03fb94fcf96398/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f66697368666f6c6b2f6a756d70792f63692e796d6c3f6c6f676f3d676974687562266c6162656c436f6c6f723d31653163323426636f6c6f723d386263666366" alt="构建状态" data-canonical-src="https://img.shields.io/github/actions/workflow/status/fishfolk/jumpy/ci.yml?logo=github&amp;labelColor=1e1c24&amp;color=8bcfcf" style="max-width: 100%;" _mstalt="181376" _msthash="324"></a> <a href="https://fishfolk.github.io/jumpy/book" rel="nofollow"><img src="https://camo.githubusercontent.com/98320877f49be555a9946a2c1680eff3f0f7e788223d722a352f75cfe6c269ed/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646f63756d656e746174696f6e2d66697368666f6c6b2e6769746875622e696f2d677265656e2e7376673f6c6162656c436f6c6f723d31653163323426636f6c6f723d663365653761" alt="文档" data-canonical-src="https://img.shields.io/badge/documentation-fishfolk.github.io-green.svg?labelColor=1e1c24&amp;color=f3ee7a" style="max-width: 100%;" _mstalt="234962" _msthash="325"></a> <a href="/fishfolk/jumpy/blob/main/LICENSE"><img src="https://camo.githubusercontent.com/49c87cad30ff2168e919c593bdce147e38aba611c63abd0e4d2faba760bd6825/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542532306f72253230417061636865253230322d677265656e2e7376673f6c6162656c3d6c6963656e7365266c6162656c436f6c6f723d31653163323426636f6c6f723d333439323565" alt="许可证" data-canonical-src="https://img.shields.io/badge/License-MIT%20or%20Apache%202-green.svg?label=license&amp;labelColor=1e1c24&amp;color=34925e" style="max-width: 100%;" _mstalt="93288" _msthash="326"></a> <a href="https://discord.gg/4smxjcheE5" rel="nofollow"><img src="https://camo.githubusercontent.com/5bd4299ef3ccde2188209b3e51605a3bc62c62289261b1ac79ee413da108de96/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636861742d6f6e253230646973636f72642d677265656e2e7376673f6c6f676f3d646973636f7264266c6f676f436f6c6f723d666666266c6162656c436f6c6f723d31653163323426636f6c6f723d386435623366" alt="不和" data-canonical-src="https://img.shields.io/badge/chat-on%20discord-green.svg?logo=discord&amp;logoColor=fff&amp;labelColor=1e1c24&amp;color=8d5b3f" style="max-width: 100%;" _mstalt="93990" _msthash="327"></a></p>
+<p dir="auto"><animated-image data-catalyst=""><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/24392180/151969075-399e9fea-e2de-4340-96a4-0a0e5b79c281.gif" data-target="animated-image.originalLink"><img src="https://user-images.githubusercontent.com/24392180/151969075-399e9fea-e2de-4340-96a4-0a0e5b79c281.gif" alt="Fish Folk： Jumpy 预览" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage" _mstalt="477997" _msthash="328"></a>
+  
+<p dir="auto" _msttexthash="93030392" _msthash="333">👉 <strong _istranslated="1"><a href="https://www.kickstarter.com/projects/erlendsh/fish-folk" rel="nofollow" _istranslated="1">在 Kickstarter 上直播！</a></strong> 👈</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="5211505" _msthash="334">介绍</h2><a id="user-content-introduction" class="anchor" aria-label="永久链接： 简介" href="#introduction" _mstaria-label="523835" _msthash="335"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="2308138274" _msthash="336">Fish Folk： Jumpy 是一款战术 2D 射击游戏，最多由 4 名玩家在线或共享屏幕玩。向左或向右瞄准;剩下的就看这款鱼对鱼斗士的巧妙移动和定位了！有关我们的起源故事 （Duck Game et.al.） 和全局计划的更多信息，请参阅我们的<a href="https://www.notion.so/erlendsh/Fish-Fight-1647ed74217e4e38a59bd28f4f5bc81a" rel="nofollow" _istranslated="1">设计文档</a>。</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="8164429" _msthash="337">Web 演示</h2><a id="user-content-web-demo" class="anchor" aria-label="永久链接：Web 演示" href="#web-demo" _mstaria-label="323388" _msthash="338"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="401463517" _msthash="339">Jumpy 在浏览器中运行！您可以玩 <a href="https://fishfolk.github.io/jumpy/player/latest/" rel="nofollow" _istranslated="1">Web demo</a> 来试用游戏，而无需在计算机上安装任何东西。</p>
+<p dir="auto" _msttexthash="508026896" _msthash="340">我们建议使用 Chrome 浏览器或其他衍生产品以获得最佳性能，或者如果您在使用其他浏览器时遇到问题。</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="34771464" _msthash="341">主要特点 （WIP）</h3><a id="user-content-key-features-wip" class="anchor" aria-label="永久链接：主要功能 （WIP）" href="#key-features-wip" _mstaria-label="598182" _msthash="342"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li _msttexthash="92496833" _msthash="343">2 到 4 名玩家在本地多人游戏或在线游戏中</li>
+<li _msttexthash="83922098" _msthash="344">易于上手，强调策略而不是抽搐反应</li>
+<li _msttexthash="150515352" _msthash="345">使用帽子自定义角色，保存到您的跨平台配置文件中</li>
+<li _msttexthash="153570612" _msthash="346">创建并探索用户制作的武器、关卡、音频和其他脚本扩展</li>
+<li _msttexthash="25692459" _msthash="347">智能关卡创建工具</li>
+<li _msttexthash="43336592" _msthash="348">内置锦标赛和配对功能</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="4142424" _msthash="349">地位</h3><a id="user-content-status" class="anchor" aria-label="永久链接：状态" href="#status" _mstaria-label="311142" _msthash="350"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="672501726" _msthash="351">该游戏目前正在重建中，因为它正在被重写以使用 <a href="https://bevyengine.org" rel="nofollow" _istranslated="1">Bevy</a> 游戏引擎。新版本现在有 4 张稳定地图和 4 个物品，游戏几乎准备好再次发布。</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="5040282" _msthash="352">社区</h2><a id="user-content-community" class="anchor" aria-label="永久链接： 社区" href="#community" _mstaria-label="413062" _msthash="353"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="6354283" _msthash="354">贡献</h3><a id="user-content-contributing" class="anchor" aria-label="永久链接： 贡献" href="#contributing" _mstaria-label="521066" _msthash="355"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="163461688" _msthash="356">任何参与 Fish Folk 社区的人都必须遵守我们的<a href="https://github.com/fishfolk/jumpy/blob/main/CODE_OF_CONDUCT.md" _istranslated="1">行为准则</a>。</p>
+<p dir="auto" _msttexthash="898724151" _msthash="357">如果您想为 Fish Folk 制作一些东西，请查看我们的 <a href="https://github.com/fishfolk/jumpy/labels/help%20wanted" _istranslated="1">help-wanted</a> issues 或直接在 <a href="https://discord.gg/4smxjcheE5" rel="nofollow" _istranslated="1">Discord</a> 上询问我们。我们很快就会发布未来一两个月工作的更新路线图。</p>
+<p dir="auto" _msttexthash="227571071" _msthash="358">在提交和打开 PR 之前，请运行以下命令并按照其说明进行操作：</p>
+<ol dir="auto">
+<li><code>cargo clippy -- -W clippy::correctness -D warnings</code></li>
+<li><code>cargo fmt</code></li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="27520909" _msthash="359">开发 Build 配置文件</h3><a id="user-content-development-build-profiles" class="anchor" aria-label="永久链接：开发构建配置文件" href="#development-build-profiles" _mstaria-label="1072240" _msthash="360"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font _mstmutation="1" _msttexthash="1696851819" _msthash="361">默认情况下，Jumpy 将在不优化 和 crate 的情况下构建。这有助于减少重新编译时间，但会牺牲一些运行时性能。如果你在开发过程中需要提高运行时性能，你可以使用 option 进行构建，以优化所有 crate：</font><code>jumpy_core</code><code>jumpy</code><code>--profile dev-optimized</code></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>cargo r --profile dev-optimized</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="cargo r --profile dev-optimized" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="11828232" _msthash="362">学习资料</h3><a id="user-content-learning-materials" class="anchor" aria-label="永久链接： 学习资料" href="#learning-materials" _mstaria-label="718393" _msthash="363"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto" _msttexthash="3471832" _msthash="364">锈</h4><a id="user-content-rust" class="anchor" aria-label="永久链接：Rust" href="#rust" _mstaria-label="250770" _msthash="365"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://cleancut.github.io/rusty_engine/" rel="nofollow" _msttexthash="13967395" _msthash="366">Rusty Engine 教程</a></li>
+<li><a href="https://sokoban.iolivia.me/" rel="nofollow" _msttexthash="183807" _msthash="367">Rust sokoban</a></li>
+<li><a href="https://pragprog.com/titles/hwrust/hands-on-rust/" rel="nofollow" _msttexthash="1922102" _msthash="368">https://pragprog.com/titles/hwrust/hands-on-rust/</a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto" _msttexthash="2973516" _msthash="369">群</h4><a id="user-content-bevy" class="anchor" aria-label="永久链接：Bevy" href="#bevy" _mstaria-label="245531" _msthash="370"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://bevy-cheatbook.github.io/" rel="nofollow" _msttexthash="26480727" _msthash="371">非官方的 Bevy 作弊书</a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="15524379" _msthash="372">下载并播放</h2><a id="user-content-download--play" class="anchor" aria-label="永久链接：下载并播放" href="#download--play" _mstaria-label="693004" _msthash="373"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li _msttexthash="51496770" _msthash="374">从<a href="https://github.com/fishfolk/jumpy/releases" _istranslated="1">发布</a>页面下载最新版本。</li>
+<li><font _mstmutation="1" _msttexthash="92050673" _msthash="375">提取存档并运行可执行文件。（例如 或</font><code>./jumpy</code><code>jumpy.exe</code>)</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="4402411" _msthash="376">发射</h3><a id="user-content-launcher" class="anchor" aria-label="永久链接：启动器" href="#launcher" _mstaria-label="366236" _msthash="377"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="103263056" _msthash="378"><a href="https://github.com/spicylobstergames/SpicyLauncher" _istranslated="1">跨平台启动</a>器也可用于轻松下载和启动游戏。</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="14108055" _msthash="379">Distro 软件包</h3><a id="user-content-distro-packages" class="anchor" aria-label="永久链接： Distro Packages" href="#distro-packages" _mstaria-label="584727" _msthash="380"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto" _msttexthash="133406" _msthash="381">Arch Linux</h4><a id="user-content-arch-linux" class="anchor" aria-label="永久链接：Arch Linux" href="#arch-linux" _mstaria-label="398411" _msthash="382"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>pacman -S jumpy</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pacman -S jumpy" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="5495750" _msthash="383">建筑</h2><a id="user-content-building" class="anchor" aria-label="永久链接：构建" href="#building" _mstaria-label="365040" _msthash="384"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li _msttexthash="19384820" _msthash="385">使用 <a href="https://rustup.rs/" rel="nofollow" _istranslated="1">rustup.rs</a> 安装 Rust</li>
+<li><font _mstmutation="1" _msttexthash="29924115" _msthash="386">克隆此存储库：</font><code>git clone https://github.com/fishfolk/jumpy.git</code></li>
+<li><code>cd jumpy</code></li>
+<li><code>cargo run</code></li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="4313010" _msthash="387">学分</h2><a id="user-content-credits" class="anchor" aria-label="永久链接：积分" href="#credits" _mstaria-label="335361" _msthash="388"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://github.com/fishfolk/jumpy/blob/main/CREDITS.md" _msttexthash="25362948" _msthash="389">Fish Folk： Jumpy 学分</a></li>
+<li _msttexthash="44538806" _msthash="390">输入图标：<a href="https://kadith.itch.io/kadiths-free-icons" rel="nofollow" _istranslated="1">Kadith 的 Kadith 图标</a></li>
+</ul>
+</article></div>
